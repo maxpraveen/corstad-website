@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="CORSTAD">
+    <rect width="48" height="48" rx="8" fill="#0E1E33"/>
+    <path d="M24 8 L38 15.5 V32.5 L24 40 L10 32.5 V15.5 Z" fill="none" stroke="#B58A4D" stroke-width="2"/>
+    <path d="M24 16 L31 20 V28 L24 32 L17 28 V20 Z" fill="#B58A4D"/>
+</svg>
