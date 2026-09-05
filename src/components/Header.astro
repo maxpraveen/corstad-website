@@ -1,0 +1,53 @@
+---
+const navItems = [
+  { href: '/about/', label: 'About' },
+  { href: '/capabilities/', label: 'Capabilities' },
+  { href: '/cybersecurity/', label: 'Cybersecurity' },
+  { href: '/technology/', label: 'Technology' },
+  { href: '/infrastructure/', label: 'Infrastructure' },
+  { href: '/projects/', label: 'Projects' }
+];
+const current = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a class="brand" href="/" aria-label="CORSTAD home">
+      <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
+        <rect width="48" height="48" rx="8" fill="#0E1E33"/>
+        <path d="M24 8 L38 15.5 V32.5 L24 40 L10 32.5 V15.5 Z" fill="none" stroke="#B58A4D" stroke-width="2"/>
+        <path d="M24 16 L31 20 V28 L24 32 L17 28 V20 Z" fill="#B58A4D"/>
+      </svg>
+      <span>
+        <span class="brand__word">CORSTAD</span>
+        <span class="brand__tag">Technology · Security · Infrastructure</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+      <span></span>
+    </button>
+
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      {navItems.map((item) => (
+        <a
+          class="nav__link"
+          href={item.href}
+          aria-current={current === item.href ? 'page' : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
+      <a class="nav__link nav__cta" href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('primary-nav');
+  toggle?.addEventListener('click', () => {
+    const isOpen = nav?.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(Boolean(isOpen)));
+  });
+</script>
