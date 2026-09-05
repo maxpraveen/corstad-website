@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://corstad.com/sitemap-index.xml
